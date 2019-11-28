@@ -6,6 +6,9 @@ from Daeseongdef.defdownloadutil import GetWebPage, GetDownloadFile
 from Daeseongcls.clsdownloadutil import clsdownloadutil
 from Daeseongdef.defdictutil import AddWords, GetWordsList, RemoveWords, UpdateWords
 from Daeseongcls.clsdictutil import clsdictutil
+from Daeseongdef.deffileutil import isDir, isFile, IsDirExist, GetFilePath, GetFileName, FindFileList, FindDirList, \
+    DeleteFile, ReadLineFile
+from Daeseongcls.clsfileutil import clsfiledutil
 
 
 def func1():
@@ -124,6 +127,55 @@ def func8():
     clsobj.GetWordsList()
 
 
+def func9():
+    print(isDir('E:\\test'))
+    print(isFile('E:\\DaeseongPython\\main.py'))
+    print(IsDirExist('E:\\test'))
+    print(IsDirExist('E:\\DaeseongPython\\main.py'))
+    print(GetFilePath('E:\\DaeseongPython\\afdasdf\\main.py'))
+    print(GetFileName('E:\\DaeseongPython\\afdasdf\\main.py'))
+    DeleteFile('E:\\liteidex30.3.windows-qt5.zip')
+    DeleteFile('E:\\a')
+    if IsDirExist('E:\\a.txt'):
+        ReadLineFile('E:\\a.txt')
+
+    FileList = FindFileList('E:\\a')
+    # print(len(FileList))
+    for i in range(len(FileList)):
+        print(FileList[i])
+
+    dirList = FindDirList('E:\\a')
+    for dir in dirList:
+        print(dir)
+
+
+def func10():
+    clsobj = clsfiledutil()
+    print(clsobj.isDir('E:\\test'))
+    print(clsobj.isFile('E:\\DaeseongPython\\main.py'))
+    print(clsobj.IsDirExist('E:\\test'))
+    print(clsobj.IsDirExist('E:\\DaeseongPython\\main.py'))
+    print(clsobj.GetFilePath('E:\\DaeseongPython\\afdasdf\\main.py'))
+    print(clsobj.GetFileName('E:\\DaeseongPython\\afdasdf\\main.py'))
+    clsobj.DeleteFile('E:\\liteidex30.3.windows-qt5.zip')
+    clsobj.DeleteFile('E:\\a')
+    if clsobj.IsDirExist('E:\\a.txt'):
+        clsobj.ReadLineFile('E:\\a.txt')
+
+    FileList = clsobj.FindFileList('E:\\a')
+    # print(len(FileList))
+    for i in range(len(FileList)):
+        print(FileList[i])
+
+    dirList = clsobj.FindDirList('E:\\a')
+    for dir in dirList:
+        print(dir)
+
+
+def func11():
+    pass
+
+
 if __name__ == '__main__':
     """
     func1()
@@ -133,5 +185,8 @@ if __name__ == '__main__':
     func5()
     func6()
     func7()
-    """
     func8()
+    func9()
+    func10()
+    """
+    func11()
