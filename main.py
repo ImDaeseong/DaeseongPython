@@ -11,6 +11,12 @@ from Daeseongdef.deffileutil import isDir, isFile, IsDirExist, GetFilePath, GetF
 from Daeseongcls.clsfileutil import clsfiledutil
 from Daeseongdef.defziputil import Zipfile, UnZipfile
 from Daeseongcls.clsziputil import clsziputil
+from Daeseongdef.defregistryutil import SetregistryString, GetregistryString, SetregistryDWord, GetregistryDWord, \
+    DeleteKeyregistry, DeleteValueregistry, SetregistryStringWOW64, GetregistryStringWOW64, SetregistryDWordWOW64, \
+    GetregistryDWordWOW64, DeleteValueregistryWOW64, SetregistryString32, GetregistryString32, SetregistryDWord32, \
+    GetregistryDWord32, DeleteKeyregistry32, DeleteValueregistry32
+from Daeseongcls.clsregistryutil import clsregistryutil
+
 
 def func1():
     print("GetExt: " + GetExt('E:\\Util\\python\\python.png'))
@@ -184,6 +190,103 @@ def func12():
     clsobj.UnZipfile('C:\\a.zip', 'C:\\')
 
 
+def func13():
+    """
+    SetregistryString32("Software\\Daeseong\\Daeseong", "GameList", "3")
+    counter = GetregistryString32("Software\\Daeseong\\Daeseong", "GameList")
+    print(counter)
+
+    SetregistryDWord32("Software\\Daeseong\\Daeseong", "Gamekey1", 1)
+    counter = GetregistryDWord32("Software\\Daeseong\\Daeseong", "Gamekey1")
+    print(counter)
+    """
+
+    """
+    DeleteValueregistry32("Software\\Daeseong\\Daeseong", "Gamekey1")
+    DeleteKeyregistry32("Software\\Daeseong\\Daeseong")
+    DeleteKeyregistry32("Software\\Daeseong")
+    """
+
+
+    """
+    SetregistryStringWOW64("Software\\Daeseong\\Daeseong", "GameList", "3")
+    counter = GetregistryStringWOW64("Software\\Daeseong\\Daeseong", "GameList")
+    print(counter)
+
+    SetregistryDWordWOW64("Software\\Daeseong\\Daeseong", "Gamekey1", 1)
+    counter = GetregistryDWordWOW64("Software\\Daeseong\\Daeseong", "Gamekey1")
+    print(counter)
+    """
+
+    # DeleteValueregistryWOW64("Software\\Daeseong\\Daeseong", "Gamekey1")
+
+    """
+    SetregistryString("Software\\Daeseong\\Daeseong", "GameList", "3")
+    counter = GetregistryString("Software\\Daeseong\\Daeseong", "GameList")
+    print(counter)
+
+    SetregistryDWord("Software\\Daeseong\\Daeseong", "Gamekey1", 1)
+    counter = GetregistryDWord("Software\\Daeseong\\Daeseong", "Gamekey1")
+    print(counter)
+    """
+
+    """
+    DeleteValueregistry("Software\\Daeseong\\Daeseong", "Gamekey1")
+
+    DeleteKeyregistry("Software\\Daeseong\\Daeseong")
+    DeleteKeyregistry("Software\\Daeseong")
+    """
+
+
+def func14():
+    clsobj = clsregistryutil()
+
+    """
+    clsobj.SetregistryString32("Software\\Daeseong\\Daeseong", "GameList", "3")
+    counter = clsobj.GetregistryString32("Software\\Daeseong\\Daeseong", "GameList")
+    print(counter)
+
+    clsobj.SetregistryDWord32("Software\\Daeseong\\Daeseong", "Gamekey1", 1)
+    counter = clsobj.GetregistryDWord32("Software\\Daeseong\\Daeseong", "Gamekey1")
+    print(counter)
+    """
+
+    """
+    clsobj.DeleteValueregistry32("Software\\Daeseong\\Daeseong", "Gamekey1")
+
+    clsobj.DeleteKeyregistry32("Software\\Daeseong\\Daeseong")
+    clsobj.DeleteKeyregistry32("Software\\Daeseong")
+    """
+
+    """
+    clsobj.SetregistryStringWOW64("Software\\Daeseong\\Daeseong", "GameList", "3")
+    counter = clsobj.GetregistryStringWOW64("Software\\Daeseong\\Daeseong", "GameList")
+    print(counter)
+
+    clsobj.SetregistryDWordWOW64("Software\\Daeseong\\Daeseong", "Gamekey1", 1)
+    counter = clsobj.GetregistryDWordWOW64("Software\\Daeseong\\Daeseong", "Gamekey1")
+    print(counter)
+    """
+
+    # clsobj.DeleteValueregistryWOW64("Software\\Daeseong\\Daeseong", "Gamekey1")
+
+    """
+    clsobj.SetregistryString("Software\\Daeseong\\Daeseong", "GameList", "3")
+    counter = clsobj.GetregistryString("Software\\Daeseong\\Daeseong", "GameList")
+    print(counter)
+
+    clsobj.SetregistryDWord("Software\\Daeseong\\Daeseong", "Gamekey1", 1)
+    counter = clsobj.GetregistryDWord("Software\\Daeseong\\Daeseong", "Gamekey1")
+    print(counter)
+    """
+
+    """
+    clsobj.DeleteValueregistry("Software\\Daeseong\\Daeseong", "Gamekey1")
+    clsobj.DeleteKeyregistry("Software\\Daeseong\\Daeseong")
+    clsobj.DeleteKeyregistry("Software\\Daeseong")
+    """
+
+
 if __name__ == '__main__':
     """
     func1()
@@ -198,4 +301,6 @@ if __name__ == '__main__':
     func10()
     func11()
     func12()
+    func13()
+    func14()
     """
