@@ -9,7 +9,8 @@ from Daeseongcls.clsdictutil import clsdictutil
 from Daeseongdef.deffileutil import isDir, isFile, IsDirExist, GetFilePath, GetFileName, FindFileList, FindDirList, \
     DeleteFile, ReadLineFile
 from Daeseongcls.clsfileutil import clsfiledutil
-
+from Daeseongdef.defziputil import Zipfile, UnZipfile
+from Daeseongcls.clsziputil import clsziputil
 
 def func1():
     print("GetExt: " + GetExt('E:\\Util\\python\\python.png'))
@@ -173,7 +174,14 @@ def func10():
 
 
 def func11():
-    pass
+    Zipfile('E:\\a', 'C:\\a.zip')
+    UnZipfile('C:\\a.zip', 'C:\\')
+
+
+def func12():
+    clsobj = clsziputil()
+    clsobj.Zipfile('E:\\a', 'C:\\a.zip')
+    clsobj.UnZipfile('C:\\a.zip', 'C:\\')
 
 
 if __name__ == '__main__':
@@ -188,5 +196,6 @@ if __name__ == '__main__':
     func8()
     func9()
     func10()
-    """
     func11()
+    func12()
+    """
