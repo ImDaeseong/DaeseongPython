@@ -2,6 +2,10 @@ from Daeseongdef.defStringutil import GetExt, GetFileName, GetOnlyFileName
 from Daeseongcls.clsStringutil import clsStringutil
 from Daeseongdef.defjsonutil import GetJson, WriteString, WriteJsonString
 from Daeseongcls.clsjsonutil import clsjsonutil
+from Daeseongdef.defdownloadutil import GetWebPage, GetDownloadFile
+from Daeseongcls.clsdownloadutil import clsdownloadutil
+from Daeseongdef.defdictutil import AddWords, GetWordsList, RemoveWords, UpdateWords
+from Daeseongcls.clsdictutil import clsdictutil
 
 
 def func1():
@@ -80,10 +84,54 @@ def func4():
         print(i['id'], i['packagename'], i['gametitle'], i['gamedesc']['details1'], i['gamedesc']['details2'])
 
 
+def func5():
+    req = GetWebPage('https://github.com/ImDaeseong')
+    print(req)
+    GetDownloadFile(
+        'http://content.screencast.com/users/JamesMontemagno/folders/Jing/media/23c1dd13-333a-459e-9e23-c3784e7cb434/2016-06-02_1049.png')
+
+
+def func6():
+    obj = clsdownloadutil()
+    req = obj.Get_WebPage('https://github.com/ImDaeseong')
+    print(req)
+    obj.Get_DownloadFile(
+        'http://content.screencast.com/users/JamesMontemagno/folders/Jing/media/23c1dd13-333a-459e-9e23-c3784e7cb434/2016-06-02_1049.png')
+
+
+def func7():
+    AddWords('lipas', '바퀴벌레')
+    AddWords('muram', '우울한우울한')
+    AddWords('persaingan', '경쟁')
+    AddWords('rawit', '작은')
+    # GetWordsList()
+    RemoveWords('lipas')
+    AddWords('tikung', '커브길')
+    UpdateWords('muram', '우울한')
+    GetWordsList()
+
+
+def func8():
+    clsobj = clsdictutil()
+    clsobj.AddWords('lipas', '바퀴벌레')
+    clsobj.AddWords('muram', '우울한우울한')
+    clsobj.AddWords('persaingan', '경쟁')
+    clsobj.AddWords('rawit', '작은')
+    # clsobj.GetWordsList()
+    clsobj.RemoveWords('lipas')
+    clsobj.AddWords('tikung', '커브길')
+    clsobj.UpdateWords('muram', '우울한')
+    clsobj.GetWordsList()
+
+
 if __name__ == '__main__':
     """
     func1()
     func2()
     func3()
     func4()
+    func5()
+    func6()
+    func7()
     """
+    func8()
