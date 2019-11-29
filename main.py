@@ -18,6 +18,9 @@ from Daeseongdef.defregistryutil import SetregistryString, GetregistryString, Se
 from Daeseongcls.clsregistryutil import clsregistryutil
 from Daeseongdef.definiutil import SetIniSection, SetIniValue, GetIniValue
 from Daeseongcls.clsiniutil import clsiniutil
+from Daeseongdef.deftimeutil import GetMonth, GetFullCurrentDay, GetCurrentDay, GetCurrentTime, GetToday, GetYear, \
+    GetDay, ConvertStrToTime, SetDay, SetMonth, SetYear, SubstringTime
+from Daeseongcls.clstimeutil import clstimeutil
 
 
 def func1():
@@ -324,6 +327,43 @@ def func16():
         print(val)
 
 
+def func17():
+    print(GetFullCurrentDay())
+    print(GetCurrentDay())
+    print(GetCurrentTime())
+    print(GetToday())
+    print(GetYear())
+    print(GetMonth())
+    print(GetDay())
+    print(ConvertStrToTime('2019-11-28 12:11:32'))
+    print("내일시간:" + SetDay(1))
+    print("어제일시간:" + SetDay(-1))
+    print("한달뒤:" + SetMonth(1))
+    print("한달전:" + SetMonth(-1))
+    print("일년뒤:" + SetYear(1))
+    print("일년전:" + SetYear(-1))
+    print(SubstringTime('2019-11-28 14:04:05', '2019-11-29 15:04:05'))
+
+
+def func18():
+    clsobj = clstimeutil()
+    print(clsobj.GetFullCurrentDay())
+    print(clsobj.GetCurrentDay())
+    print(clsobj.GetCurrentTime())
+    print(clsobj.GetToday())
+    print(clsobj.GetYear())
+    print(clsobj.GetMonth())
+    print(clsobj.GetDay())
+    print(clsobj.ConvertStrToTime('2019-11-28 12:11:32'))
+    print("내일시간:" + clsobj.SetDay(1))
+    print("어제일시간:" + clsobj.SetDay(-1))
+    print("한달뒤:" + clsobj.SetMonth(1))
+    print("한달전:" + clsobj.SetMonth(-1))
+    print("일년뒤:" + clsobj.SetYear(1))
+    print("일년전:" + clsobj.SetYear(-1))
+    print(clsobj.SubstringTime('2019-11-28 14:04:05', '2019-11-29 15:04:05'))
+
+
 if __name__ == '__main__':
     """
     func1()
@@ -342,5 +382,6 @@ if __name__ == '__main__':
     func14()
     func15()
     func16()
+    func17()
     """
-
+    func18()
