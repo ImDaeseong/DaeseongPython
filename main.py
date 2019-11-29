@@ -21,6 +21,8 @@ from Daeseongcls.clsiniutil import clsiniutil
 from Daeseongdef.deftimeutil import GetMonth, GetFullCurrentDay, GetCurrentDay, GetCurrentTime, GetToday, GetYear, \
     GetDay, ConvertStrToTime, SetDay, SetMonth, SetYear, SubstringTime
 from Daeseongcls.clstimeutil import clstimeutil
+from Daeseongdef.defwinapiutil import ShellExecute_url, ShellExecute_path
+from Daeseongcls.clswinapiutil import clswinapiutil
 
 
 def func1():
@@ -364,6 +366,17 @@ def func18():
     print(clsobj.SubstringTime('2019-11-28 14:04:05', '2019-11-29 15:04:05'))
 
 
+def func19():
+    ShellExecute_url('https://www.naver.com')
+    ShellExecute_path('C:\\Windows\\System32\\notepad.exe')
+
+
+def func20():
+    clsobj = clswinapiutil()
+    clsobj.ShellExecute_url('https://www.naver.com')
+    clsobj.ShellExecute_path('C:\\Windows\\System32\\notepad.exe')
+
+
 if __name__ == '__main__':
     """
     func1()
@@ -383,5 +396,7 @@ if __name__ == '__main__':
     func15()
     func16()
     func17()
-    """
     func18()
+    func19()
+    func20()
+    """
