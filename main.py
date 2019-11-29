@@ -16,6 +16,8 @@ from Daeseongdef.defregistryutil import SetregistryString, GetregistryString, Se
     GetregistryDWordWOW64, DeleteValueregistryWOW64, SetregistryString32, GetregistryString32, SetregistryDWord32, \
     GetregistryDWord32, DeleteKeyregistry32, DeleteValueregistry32
 from Daeseongcls.clsregistryutil import clsregistryutil
+from Daeseongdef.definiutil import SetIniSection, SetIniValue, GetIniValue
+from Daeseongcls.clsiniutil import clsiniutil
 
 
 def func1():
@@ -207,7 +209,6 @@ def func13():
     DeleteKeyregistry32("Software\\Daeseong")
     """
 
-
     """
     SetregistryStringWOW64("Software\\Daeseong\\Daeseong", "GameList", "3")
     counter = GetregistryStringWOW64("Software\\Daeseong\\Daeseong", "GameList")
@@ -287,6 +288,42 @@ def func14():
     """
 
 
+def func15():
+    nGameCount = 3
+    SetIniSection("GameList", "c:\\gameinfo.ini")
+    SetIniValue("GameList", "GameCount", str(nGameCount), "c:\\gameinfo.ini")
+    for i in range(nGameCount):
+        key = "Gamekey%d" % (i)
+        val = "Gamename%d" % (i)
+        SetIniValue("GameList", key, val, "c:\\gameinfo.ini")
+
+    nReadCount = GetIniValue("GameList", "GameCount", "c:\\gameinfo.ini")
+    nCount = int(nReadCount)
+    for i in range(nCount):
+        key = "Gamekey%d" % (i)
+        val = GetIniValue("GameList", key, "c:\\gameinfo.ini")
+        print(val)
+
+
+def func16():
+    clsobj = clsiniutil('c:\\gameinfo.ini')
+
+    nGameCount = 3
+    clsobj.SetIniSection("GameList")
+    clsobj.SetIniValue("GameList", "GameCount", str(nGameCount))
+    for i in range(nGameCount):
+        key = "Gamekey%d" % (i)
+        val = "Gamename%d" % (i)
+        clsobj.SetIniValue("GameList", key, val)
+
+    nReadCount = clsobj.GetIniValue("GameList", "GameCount")
+    nCount = int(nReadCount)
+    for i in range(nCount):
+        key = "Gamekey%d" % (i)
+        val = clsobj.GetIniValue("GameList", key)
+        print(val)
+
+
 if __name__ == '__main__':
     """
     func1()
@@ -303,4 +340,7 @@ if __name__ == '__main__':
     func12()
     func13()
     func14()
+    func15()
+    func16()
     """
+
