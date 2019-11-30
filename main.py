@@ -23,6 +23,8 @@ from Daeseongdef.deftimeutil import GetMonth, GetFullCurrentDay, GetCurrentDay, 
 from Daeseongcls.clstimeutil import clstimeutil
 from Daeseongdef.defwinapiutil import ShellExecute_url, ShellExecute_path
 from Daeseongcls.clswinapiutil import clswinapiutil
+from Daeseongdef.deftimerutil import Repeat_timer
+from Daeseongcls.clstimerutil import clstimerutil
 
 
 def func1():
@@ -377,6 +379,15 @@ def func20():
     clsobj.ShellExecute_path('C:\\Windows\\System32\\notepad.exe')
 
 
+def func21():
+    Repeat_timer()
+
+
+def func22():
+    clsobj = clstimerutil(1, 10)
+    clsobj.start()
+
+
 if __name__ == '__main__':
     """
     func1()
@@ -399,4 +410,7 @@ if __name__ == '__main__':
     func18()
     func19()
     func20()
+    func21()
+    func22()
     """
+
